@@ -3,3 +3,6 @@ Allows users to choose songs and test how much of the lyrics they know! Uses Gen
 
 To-do:
 Make requirements.txt
+Preprocessing on lyrics:
+1) Remove new lines
+2) Remove surrounding punctuation

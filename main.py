@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import re
+from LyricMasker import LyricMasker
 
 
 def artist_search(artist):
@@ -31,10 +32,13 @@ def mask_lyrics(url):
     html = BeautifulSoup(page.text, 'html.parser')
     pre_lyrics = html.find('div', class_='lyrics').get_text()
     lyrics = re.sub(r"\[.*\]", "", pre_lyrics).strip()
+    LM = LyricMasker(lyrics)
+    return LM
 
 
 if __name__ == '__main__':
-    mask_lyrics('https://genius.com/Drake-hold-on-were-going-home-lyrics')
+    LM = mask_lyrics('https://genius.com/Eminem-without-me-lyrics')
+    LM.game()
     # artist = input("Choose an artist: ")
     # songs = artist_search(artist)
     # hits = songs['response']['hits']
