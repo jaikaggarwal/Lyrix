@@ -1,0 +1,3 @@
+Todo still:
+1) Need to learn angular to build front end
+2) Convert to flask web API??
